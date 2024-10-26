@@ -29,10 +29,27 @@ void main_loop(void)
 		}
 		else
 		{
-			printf("%s\n", command);
+			FILE* pf;
+
+			pf = _popen(command, "r");
+
+			if (!pf)
+			{
+				printf("%s: command not found\n", command);
+			}
+			else
+			{
+				char buffer[1024];
+
+				while (fgets(buffer, 1024, pf) != NULL)
+				{
+					printf("%s", buffer);
+				}
+
+				_pclose(pf);
+			}
 		}
 	}
-	
 }
 
 int main(int argc, char** argv)
