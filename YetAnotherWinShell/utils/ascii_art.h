@@ -3,4 +3,4 @@
 
 void ascii_art(void);
 
-#endif // ASCII	_ART_H
+#endif ASCII	_ART_H

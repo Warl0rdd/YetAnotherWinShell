@@ -27,6 +27,12 @@ void main_loop(void)
 		{
 			printf("Too long input, 1023 chars is max\n");
 		}
+
+		else if (strcmp(command, "exit\n") == 0)
+		{
+			break;
+		}
+
 		else
 		{
 			FILE* pf;
